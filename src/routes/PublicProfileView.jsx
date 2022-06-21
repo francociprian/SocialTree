@@ -43,7 +43,7 @@ export default function PublicProfileView() {
   }
 
   return (
-    <DashboardWrapper>
+    <DashboardWrapper user={profile?.profileInfo?.username}>
       <Box
         h='90vh'
         display='flex'
@@ -54,6 +54,7 @@ export default function PublicProfileView() {
           direction='column'>
           <Image 
             src={url} 
+            borderRadius='full'
             alt="profile"
             boxSize='500px'
             objectFit='cover' 

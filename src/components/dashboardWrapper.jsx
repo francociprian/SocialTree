@@ -5,7 +5,6 @@ import { Box, Text, Flex, IconButton } from '@chakra-ui/react'; // chakra-ui
 import { FiLogOut } from "react-icons/fi"; //React-icons
 
 export default function DashboardWrapper({children, user}) {
-
   return (
     <Box>
       <Box 
