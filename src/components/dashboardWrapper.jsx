@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
 import ToogleDarkMode from './toogleDarkMode/ToogleDarkMode';
 
-import { Box, Text, Flex, IconButton, Tooltip, Container, useTheme, useColorModeValue } from '@chakra-ui/react'; // chakra-ui
+import { Box, Text, Flex, IconButton, Tooltip, Container, useColorModeValue } from '@chakra-ui/react'; // chakra-ui
 import { FiLogOut } from "react-icons/fi"; //React-icons
 
 export default function DashboardWrapper({children}) {
   const bg = useColorModeValue("bg.light", "bg.dark");
   const color = useColorModeValue("gray.900", "gray.100");
 
-  const theme = useTheme()
-  console.log(theme)
   return (
     <Box>
       <Container
