@@ -3,8 +3,9 @@ import { auth } from '../firebase/firebase';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import AuthProvider from '../components/authProvider';
 import { useNavigate } from 'react-router-dom';
+import ToogleDarkMode from '../components/toogleDarkMode/ToogleDarkMode'; 
 
-import { Button } from '@chakra-ui/react'; // chakra-ui
+import { Button, Flex, Center, Container } from '@chakra-ui/react'; // chakra-ui
 
 export default function LoginView() {
   // const [ currentUser, setCurrentUser ] = useState(null);
@@ -43,33 +44,39 @@ export default function LoginView() {
 
   if(state === 4) {
       return (
-        <div>
-          <Button 
-            size='lg'
-            m='4' 
-            variant='solid' 
-            colorScheme='pink' 
-            onClick={handleOnClick}
-          > Login With Google 
-          </Button>
-        </div>
+        <Container maxW='container.xl'>
+          <Flex justify='flex-end' pt='2'><ToogleDarkMode /></Flex>
+          <Center
+            w='100%'
+            h='80vh' 
+            color='white'>
+            <Button 
+              size='lg'
+              m='4' 
+              variant='solid' 
+              colorScheme='pink' 
+              onClick={handleOnClick}
+            > Login With Google 
+            </Button>
+          </Center>
+        </Container>
       )
   }
 
-  if(state === 5) {
-    return (
-      <div>
-        <Button 
-            size='lg'
-            m='4' 
-            variant='solid' 
-            colorScheme='pink' 
-            onClick={handleOnClick}
-          > Login With Google 
-          </Button>
-      </div>
-    )
-}
+  // if(state === 5) {
+  //   return (
+  //     <div>
+  //       <Button 
+  //           size='lg'
+  //           m='4' 
+  //           variant='solid' 
+  //           colorScheme='pink' 
+  //           onClick={handleOnClick}
+  //         > Login With Google 
+  //         </Button>
+  //     </div>
+  //   )
+  // }
   
   return ( 
     <AuthProvider 

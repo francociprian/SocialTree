@@ -5,9 +5,9 @@ import AuthProvider from '../components/authProvider';
 export default function SignoutView() {
   const navigate = useNavigate();
 
-  async function handleLogout() {
-    await logOut();
-    navigate('/login');
+  function handleLogout() {
+    logOut();
+    navigate('/');
   }
 
     return (
