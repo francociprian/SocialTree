@@ -3,6 +3,7 @@ import AuthProvider from '../components/authProvider';
 import DashboardWrapper from '../components/dashboardWrapper';
 import { useNavigate } from 'react-router-dom';
 import { setUserProfilePhoto, getProfilePhotoUrl, updateUser } from '../firebase/firebase';
+import { Link} from 'react-router-dom';
 
 
 import {
@@ -14,6 +15,7 @@ import {
   Text,
   Image
 } from '@chakra-ui/react' //Chakra ui
+import { ArrowForwardIcon } from '@chakra-ui/icons'; //Chakra ui
 
 export default function EditProfileView() {
   const navigate = useNavigate();
@@ -68,8 +70,8 @@ export default function EditProfileView() {
     )
   }
    return (
-      <DashboardWrapper user={currentUser.username}>
-        <Container maxW="container.xl">
+      <DashboardWrapper>
+        <Container maxW="container.xl" h='100vh'>
           <Text fontSize='4xl' align='center'>Edit Profile Picture</Text>
           <Center my='5'>
             <div>
@@ -96,6 +98,9 @@ export default function EditProfileView() {
               </Flex>
             </div>
           </Center>
+          <Text align='center' textDecoration='underline'  fontSize='2xl'>
+            <Link to={`/u/${currentUser.username}`}><ArrowForwardIcon/>Public Profile</Link>
+          </Text>
         </Container>
       </DashboardWrapper>
   )
