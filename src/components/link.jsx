@@ -1,6 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 
-import { Button, Text, Box, Input, useColorModeValue, Flex, IconButton } from '@chakra-ui/react' // chakra-ui
+import { 
+  Button, 
+  Text, 
+  Box, 
+  Input, 
+  // useColorModeValue, 
+  Flex, 
+  IconButton 
+} from '@chakra-ui/react' // chakra-ui
+
 import { EditIcon, DeleteIcon } from '@chakra-ui/icons'
 
 export default function Link({ docId, title, url, onDelete, onUpdate }) {
@@ -56,13 +65,13 @@ export default function Link({ docId, title, url, onDelete, onUpdate }) {
     onDelete(docId);
   }
 
-  const bg = useColorModeValue("link.light", "link.dark");
+  // const bg = useColorModeValue("link.light", "link.dark");
   
   return (
     <Box 
       key={docId} 
       p='4'
-      bg={bg}
+      // bg={bg}
       w='full' 
       borderWidth="2px"
       shadow="sm"
@@ -74,7 +83,7 @@ export default function Link({ docId, title, url, onDelete, onUpdate }) {
         <Flex justify='flex-end'>
             <IconButton
               colorScheme='red'
-              size='md'
+              size='sm'
               aria-label='Search database'
               icon={<DeleteIcon />}
               onClick={handleDelete}
@@ -93,7 +102,7 @@ export default function Link({ docId, title, url, onDelete, onUpdate }) {
               />
             </>
           ) : (
-            <Flex gap='5'>
+            <Flex gap='5' align='center'>
               <Button leftIcon={<EditIcon />} colorScheme='linkedin' variant='solid' size='xs'  onClick={handleEditTitle}>Edit</Button>
               <Text fontSize='xl'> {currentTitle} </Text>
             </Flex>
@@ -112,7 +121,7 @@ export default function Link({ docId, title, url, onDelete, onUpdate }) {
               />
             </>
           ) : (
-            <Flex gap='5'>
+            <Flex gap='5' align='center'>
               <Button leftIcon={<EditIcon />} colorScheme='linkedin' variant='solid' size='xs' onClick={handleEditUrl}>Edit</Button>
               <Text fontSize='xl'> {currentUrl} </Text>
             </Flex>

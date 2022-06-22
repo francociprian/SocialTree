@@ -15,7 +15,8 @@ import {
   Container,
   Text,
   Center,
-  Spinner
+  Spinner,
+  // Flex
 } from '@chakra-ui/react' //Chakra ui
 
 export default function DashboardView() {
@@ -103,24 +104,25 @@ export default function DashboardView() {
   return (
     <DashboardWrapper>
       <div>
-        <Container maxW="container.xl">
+        <Container maxW='container.lg' py={8}>
           <Text fontSize='3xl'>Dashboard</Text>
           <form onSubmit={handleOnSubmit}>
-            <FormControl>  
-              <FormLabel htmlFor='title'>Social Network</FormLabel>
-              <Input variant='filled'  type="text" name="title" id='title' onChange={handleOnChange} />
+            <Container maxW='container.md' py={8} >
+              <FormControl display='flex' flexDirection='column'>  
+                <FormLabel htmlFor='title'>Social Network</FormLabel>
+                <Input variant='filled'  type="text" name="title" id='title' onChange={handleOnChange} />
 
-              <FormLabel htmlFor='url'>Url</FormLabel>
-              <Input variant='filled'  type="text" name="url" id='url' onChange={handleOnChange}/>
+                <FormLabel htmlFor='url'>Url</FormLabel>
+                <Input variant='filled'  type="text" name="url" id='url' onChange={handleOnChange}/>
 
-              {/* <Input colorScheme='teal' type="submit" value="Create new link"  /> */}
-              <Button variant='solid' type="submit" colorScheme='teal'>Create new link</Button>
-            </FormControl>
+                <Button variant='solid' type="submit" colorScheme='teal' mt='8' w='30%' alignSelf='center'>Create new link</Button>
+              </FormControl>
+            </Container>
           </form>
         </Container>
 
-        <Container maxW='container.xl'>
-          <h2>Links</h2>
+        <Container maxW='container.lg' py={8}>
+          <Text fontSize='2xl'>Links</Text>
           <SimpleGrid
             minChildWidth={{ base: "240px", md: "800px" }}
             spacing={{ base: "10px", sm: "30px" }}
