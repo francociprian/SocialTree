@@ -10,7 +10,8 @@ const theme = {
       light: "#FFFFFF",
       // dark: "#13111C",
       // dark: "#234577",
-      dark: "#1A202C",
+      // dark: "#1A202C",
+      dark: '#313640'
     },
     light: {
       white: "#FFFFFF",

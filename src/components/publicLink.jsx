@@ -1,24 +1,29 @@
-import { Box, Text, useColorModeValue } from '@chakra-ui/react' // chakra-ui
+import { Text, useColorModeValue, Flex } from '@chakra-ui/react' // chakra-ui
 import { LinkIcon } from '@chakra-ui/icons' // chakra-ui
 
 
 export default function PublicLink({url, title}) {
 
-  const bg = useColorModeValue("link.light", "link.dark");
+  const bg = useColorModeValue("text.light", "text.dark");
+  const color = useColorModeValue("bg.light", "bg.dark");
+
   return (
-    <Box
-      p='5px 30px'
+    <Flex
+      h='35px'
+      w='18rem'
       m='2'
       bg={bg}
-      rounded= "lg"
-      borderWidth="2px"
+      color={color}
+      rounded= "full"
       _hover={{ 
-        bg: "teal.300",
+        bg: bg,
       }}
+      justify='center'
+      align='center'
       >
         <Text fontSize='xl' as='a' href={url}>
           <LinkIcon/> {title}
         </Text>
-    </Box>
+    </Flex>
   )
 }
