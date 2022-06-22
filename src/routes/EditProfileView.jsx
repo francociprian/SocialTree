@@ -13,11 +13,18 @@ import {
   Container,
   Center,
   Text,
-  Image
+  Image,
+  Skeleton,
+  Box
 } from '@chakra-ui/react' //Chakra ui
 import { ArrowForwardIcon } from '@chakra-ui/icons'; //Chakra ui
 
 export default function EditProfileView() {
+  const [ isLoaded, setIsLoaded ] = useState(false);
+  setTimeout(() => {
+    setIsLoaded(true);
+  }, 1500);
+
   const navigate = useNavigate();
   const [ currentUser, setCurrentUser ] = useState({});
   const [ state, setState ] = useState(0)
@@ -69,20 +76,31 @@ export default function EditProfileView() {
       ><div>Loading....</div></AuthProvider>
     )
   }
+  
+
    return (
       <DashboardWrapper>
         <Container maxW="container.xl" h='100vh'>
           <Text fontSize='4xl' align='center'>Edit Profile Picture</Text>
           <Center my='5'>
-            <div>
-              <div>
-                <Image 
-                  src={profileUrl} 
-                  alt='profile'
-                  boxSize='500px'
-                  objectFit='cover'
-                  />
-              </div>
+            <Box>
+              <Box>
+                  <Skeleton 
+                    h='500px' 
+                    w='500px' 
+                    bg='gray.400' 
+                    speed={10} 
+                    fadeDuration={5} 
+                    isLoaded={isLoaded}
+                    >  
+                      <Image 
+                        src={profileUrl} 
+                        alt='profile'
+                        boxSize='500px'
+                        objectFit='cover'
+                      />
+                  </Skeleton>
+              </Box>
               <Flex justify='center' mt='4'>
                 <Button
                   onClick={handleOpenFilePicker}
@@ -96,7 +114,7 @@ export default function EditProfileView() {
                   style={{display: 'none'}} 
                 />
               </Flex>
-            </div>
+            </Box>
           </Center>
           <Text align='center' textDecoration='underline'  fontSize='2xl'>
             <Link to={`/u/${currentUser.username}`}><ArrowForwardIcon/>Public Profile</Link>
