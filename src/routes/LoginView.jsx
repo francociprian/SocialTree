@@ -5,10 +5,9 @@ import AuthProvider from '../components/authProvider';
 import { useNavigate } from 'react-router-dom';
 import ToogleDarkMode from '../components/toogleDarkMode/ToogleDarkMode'; 
 
-import { Button, Flex, Center, Container } from '@chakra-ui/react'; // chakra-ui
+import { Button, Flex, Center, Container, Spinner } from '@chakra-ui/react'; // chakra-ui
 
 export default function LoginView() {
-  // const [ currentUser, setCurrentUser ] = useState(null);
   const navigate = useNavigate();
   /* State
   0: inicializado
@@ -62,21 +61,6 @@ export default function LoginView() {
         </Container>
       )
   }
-
-  // if(state === 5) {
-  //   return (
-  //     <div>
-  //       <Button 
-  //           size='lg'
-  //           m='4' 
-  //           variant='solid' 
-  //           colorScheme='pink' 
-  //           onClick={handleOnClick}
-  //         > Login With Google 
-  //         </Button>
-  //     </div>
-  //   )
-  // }
   
   return ( 
     <AuthProvider 
@@ -84,7 +68,16 @@ export default function LoginView() {
       onUserNotRegistered={handleUserNotRegistered}
       onUserNotLoggedIn={handleUserNotLoggedIn}
     >
-      <div>Loading.....</div>
+      <Center
+          h='100vh'>
+          <Spinner
+            thickness='3px'
+            speed='0.65s'
+            emptyColor='whiteAlpha.100'
+            color='#B5838D'
+            size='xl'
+          />
+        </Center>
     </AuthProvider>
   );
 }

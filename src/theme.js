@@ -21,6 +21,10 @@ const theme = {
       light: "#E6FFFA",
       dark: "#285E61",
     },
+    prueba:{
+      light: "#e6ced4",
+      dark: "#a8707f",
+    },
     text:{
       light: "#12101C",
       dark: "#FFFFFF",

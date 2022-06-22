@@ -15,7 +15,8 @@ import {
   Text,
   Image,
   Skeleton,
-  Box
+  Box,
+  Spinner
 } from '@chakra-ui/react' //Chakra ui
 import { ArrowForwardIcon } from '@chakra-ui/icons'; //Chakra ui
 
@@ -73,7 +74,18 @@ export default function EditProfileView() {
       onUserLoggedIn={handleUserLoggedIn}
       onUserNotRegistered={handleUserNotRegistered}
       onUserNotLoggedIn={handleUserNotLoggedIn}
-      ><div>Loading....</div></AuthProvider>
+      >
+        <Center
+          h='100vh'>
+          <Spinner
+            thickness='3px'
+            speed='0.65s'
+            emptyColor='whiteAlpha.100'
+            color='#B5838D'
+            size='xl'
+          />
+        </Center>
+      </AuthProvider>
     )
   }
   

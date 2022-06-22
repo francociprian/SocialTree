@@ -13,8 +13,10 @@ import {
   Button,
   SimpleGrid,
   Container,
-  Text
-} from '@chakra-ui/react'
+  Text,
+  Center,
+  Spinner
+} from '@chakra-ui/react' //Chakra ui
 
 export default function DashboardView() {
   const navigate = useNavigate();
@@ -40,7 +42,17 @@ export default function DashboardView() {
       onUserLoggedIn={handleUserLoggedIn}
       onUserNotRegistered={handleUserNotRegistered}
       onUserNotLoggedIn={handleUserNotLoggedIn}
-      ><div>Loading....</div>
+      >
+        <Center
+          h='100vh'>
+          <Spinner
+            thickness='3px'
+            speed='0.65s'
+            emptyColor='whiteAlpha.100'
+            color='#B5838D'
+            size='xl'
+          />
+        </Center>
       </AuthProvider>
     )
   }
