@@ -4,7 +4,7 @@ import App from './App';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { ChakraProvider } from '@chakra-ui/react'
-import {ColorModeScript} from '@chakra-ui/color-mode'
+import {  ColorModeScript } from '@chakra-ui/color-mode'
 import theme from './theme';
 
 import LoginView from './routes/LoginView';

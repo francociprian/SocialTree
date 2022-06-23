@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'PolySansMedium';
+  src: local('PolySansMedium'),
+  url('./fonts/PolySansMedium.woff2') format("truetype");	
+}
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'),
+  url('./fonts/Inter.woff2') format("truetype");
+  
+}
+@font-face {
+  font-family: 'PolySansRegular';
+  src: local('PolySansRegular'),
+    url('./fonts/PolySansRegular.woff2') format("truetype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.socialtree{
+  font-family: 'PolySansMedium', sans-serif !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.heading-link{
+  font-family: 'PolySansMedium', sans-serif !important;
 }

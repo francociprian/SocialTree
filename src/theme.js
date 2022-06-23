@@ -38,16 +38,11 @@ const theme = {
       },
       heroGradientStart: {
         default: '#7928CA',
-        _dark: '#e3a7f9',
+        _dark: '#FFF000'
       },
       heroGradientEnd: {
         default: '#FF0080',
-        _dark: '#fbec8f',
-      },
-    },
-    sizes:{
-      container:{
-        xxl: '1300px',
+        _dark: '#ED008C ',
       },
     },
   },
@@ -55,7 +50,7 @@ const theme = {
     global: {
       body: {
         margin: 0,
-        'font-family': "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
+        'font-family': "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif", 
         '-webkit-font-smoothing': 'antialiased',
         '-moz-osx-font-smoothing': 'grayscale',
       }, 
