@@ -12,7 +12,7 @@ export default function AuthProvider({ children, onUserLoggedIn, onUserNotLogged
         const isRegistered = await userExists(user.uid);
         if(isRegistered){
           const userInfo = await getUserInfo(user.uid);
-          if(!userInfo.processCompleted){
+          if(userInfo.processCompleted){
             onUserLoggedIn(userInfo);
           }else{
             onUserNotRegistered(userInfo);
