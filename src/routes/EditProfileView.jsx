@@ -4,7 +4,7 @@ import DashboardWrapper from '../components/dashboardWrapper';
 import { useNavigate } from 'react-router-dom';
 import { setUserProfilePhoto, getProfilePhotoUrl, updateUser } from '../firebase/firebase';
 import { Link} from 'react-router-dom';
-
+import BlankUser from '../assets/images/blankuser.png';	
 
 import {
   Flex,
@@ -29,7 +29,7 @@ export default function EditProfileView() {
   const navigate = useNavigate();
   const [ currentUser, setCurrentUser ] = useState({});
   const [ state, setState ] = useState(0)
-  const [ profileUrl, setProfileUrl ] = useState(null);
+  const [ profileUrl, setProfileUrl ] = useState(BlankUser);
 
   const fileRef = useRef(null);
 
