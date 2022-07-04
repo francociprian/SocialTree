@@ -41,7 +41,7 @@ REACT_APP_STORAGEBUCKET=
 REACT_APP_MESSAGINGSENDERID=
 REACT_APP_APPID=
 ```
-### Variables: <br>
+Variables: <br>
 - Go to https://firebase.google.com/ <br>
 - Create a new proyect -> Project settings -> General -> SDK Configuration -> add firebaseConfig in .env
 
