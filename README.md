@@ -57,3 +57,7 @@ npm install
 ```
 npm Start
 ```
+5. 🥳 Ready! Open the browser and write localhost:3000.
+
+## Deploy:
+[socialtreee.vercel.app](https://socialtreee.vercel.app/).
